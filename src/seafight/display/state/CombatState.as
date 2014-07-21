@@ -12,6 +12,11 @@ package seafight.display.state
 
 	public class CombatState extends AbstractState
 	{
+		private static const SHIP_IV:int = 1;
+		private static const SHIP_III:int = 2;
+		private static const SHIP_II:int = 3;
+		private static const SHIP_I:int = 4;
+		
 		private var ownerGrid:Grid;
 		private var enemyGrid:Grid;
 		
@@ -46,6 +51,16 @@ package seafight.display.state
 		
 		protected override function onAddToStageHandler(event:Event):void {			
 			this.enemyGrid.reset();
+			
+			this.ownerShipIVCount = CombatState.SHIP_IV;			
+			this.ownerShipIIICount = CombatState.SHIP_III;	
+			this.ownerShipIICount = CombatState.SHIP_II;
+			this.ownerShipICount = CombatState.SHIP_I;
+			
+			this.enemyShipIVCount = CombatState.SHIP_IV;			
+			this.enemyShipIIICount = CombatState.SHIP_III;
+			this.enemyShipIICount = CombatState.SHIP_II;
+			this.enemyShipICount =  CombatState.SHIP_I;
 			
 			this.shipCountUpdate();
 			
